@@ -1,12 +1,11 @@
 import { d } from 'assets/icons/d'
 import Icon from 'assets/icons/Icon'
+import SButton from 'components/SButton'
 import SRow from 'components/SRow'
 import { FS, HEIGHT_SCALE_RATIO, ptColor, style, WIDTH_SCALE_RATIO } from 'constants/styles'
 import React, { useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import { Input } from 'react-native-elements'
-import SButton from 'components/SButton'
-import LinearGradient from 'react-native-linear-gradient';
+import { Input, SocialIcon } from 'react-native-elements'
 interface Props {
 
 }
@@ -115,7 +114,70 @@ const LoginSneakerScreen = (props: Props) => {
 
             <SButton
                 solid
+                containerStyle={{
+                    marginTop: 40 * WIDTH_SCALE_RATIO
+                }}
                 title='Đăng nhập' />
+
+            <Text style={[style.textCaption, {
+                textAlign: 'center',
+                color: ptColor.textPlaceholderColor,
+                fontSize: FS(14),
+                marginTop: 20 * WIDTH_SCALE_RATIO,
+                marginBottom: 20 * WIDTH_SCALE_RATIO
+            }]}>Hoặc đăng nhập</Text>
+
+            <SRow>
+                <SocialIcon
+                    onPress={() => console.log('login fb')}
+
+                    style={{
+                        borderRadius: 5 * HEIGHT_SCALE_RATIO,
+                        flex: 1,
+                    }}
+                    title='Facebook'
+                    button
+                    type='facebook'
+                    fontStyle={{
+                        fontSize: FS(14)
+                    }}
+                />
+                <SocialIcon
+                    onPress={() => console.log('login gg')}
+                    style={{
+                        borderRadius: 5 * HEIGHT_SCALE_RATIO,
+                        flex: 1
+                    }}
+                    title='Google'
+                    button
+                    type='google'
+                    fontStyle={{
+                        fontSize: FS(14)
+                    }}
+                />
+            </SRow>
+            <SRow style={{
+                position:'absolute',
+                bottom:10 * HEIGHT_SCALE_RATIO,
+                alignItems:'center',
+                justifyContent: 'center',
+                width:'100%',
+                left:0,
+                right:0
+            }}>
+                <Text style={{
+                    textAlign: 'center',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                }}>Nếu bạn chưa có tài khoản?   </Text>
+
+                <Text style={{
+                    color: ptColor.blue,
+                    fontWeight: 'bold',
+                    textAlign: 'center'
+                }}>Đăng kí</Text>
+            </SRow>
+
 
         </View>
     )

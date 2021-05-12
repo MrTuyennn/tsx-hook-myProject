@@ -22,14 +22,14 @@ const SRow = (props: Props) => {
         )
     }
     return (
-        <TouchableOpacity
+        <View
             {...props}
             style={[{
                 flexDirection: 'row',
                 alignItems: 'center',
             }, props.style || {}]}>
             {props.children}
-        </TouchableOpacity>)
+        </View>)
 }
 
 export default SRow
